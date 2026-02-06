@@ -22,7 +22,7 @@ The only truly secure system is one that is powered off. - Gene Spafford
 Software is a great combination of artistry and engineering. - Bill Gates
 Measuring programming progress by lines of code is like measuring aircraft building progress by weight. - Bill Gates
 Programming isn't about what you know; it's about what you can figure out. - Chris Pine
-The art of debugging is figuring out what you really told your computer to do rather than what you thought you told it to do. - Andrew Singer
+The art of debugging is figuring out what you really told your computer to do. - Andrew Singer
 A good programmer is someone who always looks both ways before crossing a one-way street. - Doug Linder
 To understand recursion, one must first understand recursion. - Anonymous
 There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. - C.A.R. Hoare
@@ -33,8 +33,8 @@ It's not a bug - it's an undocumented feature. - Anonymous
 Life is too short to run proprietary software. - Bdale Garbee
 UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity. - Dennis Ritchie
 Linux is only free if your time has no value. - Jamie Zawinski
-There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone. - Bjarne Stroustrup
-On two occasions I have been asked, 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question. - Charles Babbage
+There's an old story about the person who wished his computer were as easy to use as his telephone. - Bjarne Stroustrup
+On two occasions I have been asked, 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' - Charles Babbage
 Computers are good at following instructions, but not at reading your mind. - Donald Knuth
 The trouble with programmers is that you can never tell what a programmer is doing until it's too late. - Seymour Cray
 If debugging is the process of removing software bugs, then programming must be the process of putting them in. - Edsger Dijkstra
@@ -88,7 +88,7 @@ Give someone a program, you frustrate them for a day; teach them how to program,
 We are stuck with technology when what we really want is just stuff that works. - Douglas Adams
 The real problem is not whether machines think but whether men do. - B.F. Skinner
 Computers are useless. They can only give you answers. - Pablo Picasso
-If you don't handle [exceptions], we shut your application down. That dramatically increases the reliability of the system. - Anders Hejlsberg
+If you don't handle [exceptions], we shut your application down. - Anders Hejlsberg
 Don't worry if it doesn't work right. If everything did, you'd be out of a job. - Mosher's Law of Software Engineering
 The next best thing to having good ideas is recognizing good ideas from your users. - Eric S. Raymond
 Hackers are innovators, they question everything. - Emmanuel Goldstein
