@@ -1,21 +1,21 @@
 # Sway Pastel Environment
 
-A complete, reproducible Sway Wayland compositor setup with dual waybar, greetd login manager, rotating quotes, fingerprint support, and Catppuccin theming.
+A complete, reproducible Sway Wayland compositor setup with dual waybar, fingerprint support, passkeys, and Catppuccin theming.
 
 ![Desktop](assets/desktop.png)
 
 ## Features
 
 - **Dual Waybar Setup**: Top bar for system monitoring, bottom bar for controls
-- **Greetd Login Manager**: Terminal-based login with 104 rotating philosophy quotes
 - **Catppuccin Theming**: Consistent pastel colors throughout
-- **Volume Control**: Capped at 100% with visual indicators
 - **Screen Lock**: Official Catppuccin swaylock theme with fingerprint support
-- **Media Controls**: Spotify integration with playerctl
 - **Fingerprint Auth**: Unlock with password OR fingerprint
 - **Passkey Support**: WebAuthn/FIDO2 support for modern authentication
+- **Media Controls**: Spotify integration with playerctl
 - **Screenshots**: Built-in screenshot tool (Print, Shift+Print, Ctrl+Print)
+- **Volume Control**: Capped at 100% with visual indicators
 - **Auto-installer**: One-command setup
+- **Optional Greetd**: Terminal-based login with 104 rotating quotes (experimental, disabled by default)
 
 ## Quick Install
 
@@ -101,8 +101,11 @@ Press `Super+D` to open the application launcher.
 | `Shift+Print` | Screenshot (select area) |
 | `Ctrl+Print` | Screenshot (focused window) |
 
-### Greetd Login Screen
+### Greetd Login Screen (Optional/Experimental)
 
+⚠️ **Note:** Greetd login manager is currently experimental and disabled by default. To enable it, edit `install.sh` and uncomment the greetd setup section before running the installer.
+
+When enabled, it features:
 - **104 rotating quotes** from famous developers and philosophers
 - **Catppuccin pastel theme** with colored borders
 - **Time display** with custom format

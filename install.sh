@@ -86,38 +86,45 @@ chmod +x "$CONFIG_DIR/sway/scripts/"*.sh 2>/dev/null || true
 chmod +x "$CONFIG_DIR/waybar/scripts/"*.sh 2>/dev/null || true
 
 # =============================================================================
-# STEP 4: Setup Greetd Login Manager
+# STEP 4: Setup Greetd Login Manager (OPTIONAL - Disabled by default)
 # =============================================================================
-log "Setting up greetd login manager with 104 rotating quotes..."
+# NOTE: Greetd is currently experimental and disabled by default.
+# To enable it, uncomment the lines below and run the installer again.
+# 
+# log "Setting up greetd login manager with 104 rotating quotes..."
+# 
+# sudo mkdir -p /etc/greetd
+# 
+# # Copy quotes file (104 quotes!)
+# sudo cp "$SCRIPT_DIR/config/greetd/quotes.txt" /etc/greetd/quotes.txt
+# sudo chmod 644 /etc/greetd/quotes.txt
+# 
+# # Create quote script
+# sudo tee /etc/greetd/tuigreet-with-quotes.sh > /dev/null << 'EOF'
+# #!/bin/bash
+# QUOTES_FILE="/etc/greetd/quotes.txt"
+# if [ -f "$QUOTES_FILE" ]; then
+#     QUOTE=$(shuf -n 1 "$QUOTES_FILE")
+# else
+#     QUOTE="Welcome to Sway"
+# fi
+# exec tuigreet --cmd sway --greeting "$QUOTE" --time --asterisks --theme 'border=magenta;text=white;prompt=green;time=blue;action=cyan;button=yellow;container=black'
+# EOF
+# sudo chmod +x /etc/greetd/tuigreet-with-quotes.sh
+# 
+# # Create greetd config
+# sudo tee /etc/greetd/config.toml > /dev/null << 'EOF'
+# [terminal]
+# vt = 1
+# [default_session]
+# command = "/etc/greetd/tuigreet-with-quotes.sh"
+# user = "greeter"
+# [environment]
+# EOF
+#
+# sudo systemctl enable greetd
 
-sudo mkdir -p /etc/greetd
-
-# Copy quotes file (104 quotes!)
-sudo cp "$SCRIPT_DIR/config/greetd/quotes.txt" /etc/greetd/quotes.txt
-sudo chmod 644 /etc/greetd/quotes.txt
-
-# Create quote script
-sudo tee /etc/greetd/tuigreet-with-quotes.sh > /dev/null << 'EOF'
-#!/bin/bash
-QUOTES_FILE="/etc/greetd/quotes.txt"
-if [ -f "$QUOTES_FILE" ]; then
-    QUOTE=$(shuf -n 1 "$QUOTES_FILE")
-else
-    QUOTE="Welcome to Sway"
-fi
-exec tuigreet --cmd sway --greeting "$QUOTE" --time --asterisks --theme 'border=magenta;text=white;prompt=green;time=blue;action=cyan;button=yellow;container=black'
-EOF
-sudo chmod +x /etc/greetd/tuigreet-with-quotes.sh
-
-# Create greetd config
-sudo tee /etc/greetd/config.toml > /dev/null << 'EOF'
-[terminal]
-vt = 1
-[default_session]
-command = "/etc/greetd/tuigreet-with-quotes.sh"
-user = "greeter"
-[environment]
-EOF
+log "Skipping greetd setup (experimental feature, disabled by default)"
 
 # =============================================================================
 # STEP 5: Configure Fingerprint Support (Optional)
@@ -185,7 +192,10 @@ EOF
 # =============================================================================
 log "Enabling services..."
 
-sudo systemctl enable greetd
+# NOTE: greetd is disabled by default (experimental)
+# To enable it, uncomment the line below and the greetd setup in STEP 4
+# sudo systemctl enable greetd
+
 sudo systemctl enable NetworkManager
 
 # Enable fingerprint service if available
